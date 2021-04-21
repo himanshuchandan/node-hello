@@ -5,12 +5,12 @@ pipeline{
     }*/
     stages{
         
-        stage('install') {
+        /*stage('install') {
           steps {
             sh 'npm install'
           }
         }
-        /*stage('login') {
+        stage('login') {
           steps {
             sh 'oc login --token= --server=https://api.sandbox.x8i5.p1.openshiftapps.com:6443'
           }
