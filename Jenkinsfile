@@ -22,12 +22,12 @@ pipeline{
         }
         stage('logs') {
                 steps {
-                sh 'oc logs -f bc/node-app'  
+                sh 'oc logs -f bc/node-app2'  
             }
         }
       stage('expose') {
           steps {
-            sh 'oc expose svc/node-app'
+            sh 'oc expose svc/node-app2'
           }
         }
        stage('route') {
