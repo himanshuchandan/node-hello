@@ -12,7 +12,7 @@ pipeline{
         }
         stage('login') {
           steps {
-            sh ''
+            sh 'oc login --token=sha256~BV6HxB85ozp9SQ-Zp6kr6GR92w-9ltvfzROA94KxbFU --server=https://api.sandbox.x8i5.p1.openshiftapps.com:6443'
           }
         }
         stage('new app') {
