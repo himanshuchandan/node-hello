@@ -17,17 +17,17 @@ pipeline{
         }
         stage('new app') {
           steps {
-            sh 'oc new-app https://github.com/himanshuchandan/node-hello --name=node-app2 --strategy=source'
+            sh 'oc new-app https://github.com/himanshuchandan/node-hello --name=node-app3 --strategy=source'
           }
         }
         stage('logs') {
                 steps {
-                sh 'oc logs -f bc/node-app2'  
+                sh 'oc logs -f bc/node-app3'  
             }
         }
       stage('expose') {
           steps {
-            sh 'oc expose svc/node-app2'
+            sh 'oc expose svc/node-app3'
           }
         }
        stage('route') {
