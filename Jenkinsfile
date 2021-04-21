@@ -10,24 +10,24 @@ pipeline{
             sh 'npm install'
           }
         }
-        stage('login') {
+        /*stage('login') {
           steps {
             sh 'oc login --token= --server=https://api.sandbox.x8i5.p1.openshiftapps.com:6443'
           }
-        }
+        }*/
         stage('new app') {
           steps {
-            sh 'oc new-app https://github.com/himanshuchandan/node-hello --name=node-app3 --strategy=source'
+            sh 'oc new-app https://github.com/himanshuchandan/node-hello --name=node-app4 --strategy=source'
           }
         }
         stage('logs') {
                 steps {
-                sh 'oc logs -f bc/node-app3'  
+                sh 'oc logs -f bc/node-app4'  
             }
         }
       stage('expose') {
           steps {
-            sh 'oc expose svc/node-app3'
+            sh 'oc expose svc/node-app4'
           }
         }
        stage('route') {
